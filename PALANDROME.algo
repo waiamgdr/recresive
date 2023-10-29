@@ -1,0 +1,68 @@
+
+
+
+// FUNCTION palandrome (ch: string): string
+// VAR
+//     i ,j : INTEGER
+//     a : string; 
+// BEGIN
+//    i:=0;
+//    j:= ch.length-1
+
+//    REPEAT
+//    IF(ch[i]==ch[j]) DO
+//     i:=i+1;
+//     j:=j-1;
+//     FIN_IF
+//    UNTIL ((i==ch.length/2)||(ch[i]<>ch[j]))
+//    FIN_IF 
+//     IF (i==ch.length/2) THEN
+//         a:= 'palandrome'; 
+//     ELSE IF (ch[i]<>ch[j])
+//         a:= 'non palandrome';
+//     END_IF
+   
+//     RETURN a ;
+// END
+
+
+
+
+FUNCTION palandrome (ch:string ) : BOOLEAN
+VAR
+   i:INTEGER
+BEGIN
+    FOR i FROM 0 TO (ch.length-1)/2 STEP 1  DO
+       IF (ch[i]<> ch[ch.length-1-i]) THEN
+        RETURN false;
+       END_IF
+    END_FOR
+    RETURN true;
+END
+
+
+
+
+
+
+
+
+
+ALGORITHM algorithm_name
+VAR
+    ch, af :string 
+BEGIN
+    read(ch);
+
+    af:= palandrome (ch);
+   
+    IF (af== true) THEN
+        write("palandrome");
+        
+        ELSE
+           write("non palandrome");
+        
+    END_IF
+   
+
+END
