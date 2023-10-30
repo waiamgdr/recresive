@@ -4,8 +4,10 @@ VAR
 BEGIN
     IF (i>=j) THEN
         RETURN(true)
-    ELSE IF (ch[i] = ch[j]) THEN
+    ELSE IF (ch[i]== ch[j]) THEN
         RETURN ( palandrome_rec(ch, i + 1, j – 1))
+     ELSE
+     RETURN(false)
     END_IF
 
 
@@ -19,8 +21,8 @@ VAR
 BEGIN
     read(ch);
 
-    i:=1;
-    j:=ch.length;
+    i:=0;
+    j:=ch.length-1;
     af_rec:=palandrome_rec(ch ,i ,j)
     IF (af== true) THEN
         write("palandrome");
